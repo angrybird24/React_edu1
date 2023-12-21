@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CODEHOUSE</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1> Would you like to join us for 11 months for CODE TRAINING ? </h1>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js" />
+    </script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" />
+    </script>
+    <script src="MyButton.js"></script>
+</body>
+
+
+<script>
+
+    function MyButton(props) {
+        const [isClicked, setIsClicked] = React.useState(false);
+
+        return React.createElement(
+            'button',
+            { onClick: () => setIsClicked(true) },
+            isClicked ? "Clicked!" : "Click here!"
+        );
+    }
+ 
+    const domContainer = document.querySelector("#root");
+    const root = ReactDOM.createRoot(domContainer);
+    root.render(React.createElement(MyButton));    
+</script>
+
+</html>
